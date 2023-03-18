@@ -132,10 +132,12 @@
   <ItemGroup>
     <ClInclude Include="AccessPoints.h" />
     <ClInclude Include="FasterMultiplication.h" />
+    <ClInclude Include="LameKing.h" />
     <ClInclude Include="PyramidSum.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
+    <Text Include="LameKing.txt" />
     <Text Include="pyramid.txt" />
     <Text Include="pyramid2.txt" />
   </ItemGroup>

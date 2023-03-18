@@ -1,4 +1,5 @@
-// This is problem A from NWERC 2018
+// This is problem A from NWERC 2018, Access Points
+// https://www.domjudge.org/demoweb/public/problems
 
 #pragma once
 
@@ -19,7 +20,7 @@ public:
 
 class SolutionAccessPoint {
 public:
-	Solution(std::string in_file_name, std::string out_file_name) : nTeams(-1) {
+	SolutionAccessPoint(std::string in_file_name, std::string out_file_name) : nTests(-1) {
 		try {
 			GetInput(in_file_name);
 			double total_cost = AssignTeams();
@@ -34,8 +35,8 @@ public:
 		input_file.open(in_file_name);
 		if (!input_file) throw std::runtime_error("File " + in_file_name + " not found");
 		
-		input_file >> nTeams;
-		for (int i = 0; i < nTeams; i++) {
+		input_file >> nTests;
+		for (int i = 0; i < nTests; i++) {
 			accessPoints.emplace_back();
 			double num;
 			input_file >> num;
@@ -55,6 +56,6 @@ public:
 		output_file << result;
 	}
 private:
-	int nTeams;
+	int nTests;
 	std::vector<Point> accessPoints;
 };

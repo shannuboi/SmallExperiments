@@ -29,10 +29,14 @@
     <ClInclude Include="PyramidSum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LameKing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
     <Text Include="pyramid.txt" />
     <Text Include="pyramid2.txt" />
+    <Text Include="LameKing.txt" />
   </ItemGroup>
 </Project>

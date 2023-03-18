@@ -1,4 +1,5 @@
-// this is problem 1 from chilitomatonoodle's coding challenges series
+// this is problem 1 from chilitomatonoodle's coding challenges series, Pyramid Sum
+// https://forum.planetchili.net/viewtopic.php?f=3&t=4139&p=25684#p25684
 
 #pragma once
 
