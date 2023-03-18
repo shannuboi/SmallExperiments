@@ -26,8 +26,13 @@
     <ClInclude Include="AccessPoints.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PyramidSum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
+    <Text Include="pyramid.txt" />
+    <Text Include="pyramid2.txt" />
   </ItemGroup>
 </Project>

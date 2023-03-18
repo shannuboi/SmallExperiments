@@ -132,9 +132,12 @@
   <ItemGroup>
     <ClInclude Include="AccessPoints.h" />
     <ClInclude Include="FasterMultiplication.h" />
+    <ClInclude Include="PyramidSum.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
+    <Text Include="pyramid.txt" />
+    <Text Include="pyramid2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

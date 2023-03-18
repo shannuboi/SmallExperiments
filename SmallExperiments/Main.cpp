@@ -1,5 +1,6 @@
-#include "AccessPoints.h"
+#include "PyramidSum.h"
 
 int main() {
-	Solution("input.txt", "");
+	SolutionPyramid("pyramid2.txt", "");
+	SolutionPyramid("pyramid.txt", "");
 }

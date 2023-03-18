@@ -17,7 +17,7 @@ public:
 	double y;
 };
 
-class Solution {
+class SolutionAccessPoint {
 public:
 	Solution(std::string in_file_name, std::string out_file_name) : nTeams(-1) {
 		try {
