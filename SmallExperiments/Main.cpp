@@ -20,4 +20,9 @@ int main() {
 	A a;
 	B b = { &a };
 	b->Foo(); 
+
+	RBTree<int, A> tree;
+	tree.Insert({ 0, a });
+	auto l = tree.begin();
+	l->Foo();
 }
