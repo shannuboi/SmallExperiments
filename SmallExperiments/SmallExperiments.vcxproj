@@ -134,6 +134,7 @@
     <ClInclude Include="FasterMultiplication.h" />
     <ClInclude Include="LameKing.h" />
     <ClInclude Include="PyramidSum.h" />
+    <ClInclude Include="RedBlackTree.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
