@@ -6,16 +6,24 @@
 class TicTacToe
 {
 public:
+	enum class GameState
+	{
+		Running,
+		Draw,
+		P1won,
+		P2won
+	};
+public:
 	// initiallize grid to all 0s
-	TicTacToe();	
+	TicTacToe();
 
 	// returns whether move possible or not
 	// If possible move is done
-	bool Move(int player, int xloc, int yloc);	
+	bool Move(int player, int xloc, int yloc);
 
 	void Display();
 
-	int State() const;	
+	GameState State() const;
 private:
 	int grid[3][3];
 };
@@ -28,7 +36,7 @@ void RunTicTacToe()
 	std::cout << "Type, when promted, the row and the column where you want to move\n";
 	std::cout << "Legal moves can only be made on spaces with squares\n\n\n";
 
-	while (game.State() == -1)	// Loop runs as long as game runs (-1)
+	while (game.State() == TicTacToe::GameState::Running)
 	{
 		game.Display();
 		std::cout << "Player 1's move (X)";
@@ -45,7 +53,7 @@ void RunTicTacToe()
 		} while (!game.Move(1, col - 1, row - 1));	// keep reasking for move if Invalid
 		std::cout << "\n\n";
 
-		if (game.State() != -1)		// Checking if p1's move finished the game
+		if (game.State() != TicTacToe::GameState::Running)		// Checking if p1's move finished the game
 		{
 			break;
 		}
@@ -67,15 +75,15 @@ void RunTicTacToe()
 	game.Display();
 	std::cout << "\n";
 
-	if (game.State() == 2)
+	if (game.State() == TicTacToe::GameState::P2won)
 	{
 		std::cout << "Game won by player 2";
 	}
-	else if (game.State() == 1)
+	else if (game.State() == TicTacToe::GameState::P1won)
 	{
 		std::cout << "Game won by player 1";
 	}
-	else if (game.State() == 0)
+	else if (game.State() == TicTacToe::GameState::Draw)
 	{
 		std::cout << "Game drawn";
 	}
@@ -126,29 +134,41 @@ void TicTacToe::Display()
 	}
 }
 
-int TicTacToe::State() const
+TicTacToe::GameState TicTacToe::State() const
 {
 	//checking all vert and horizontal win conditions
 	for (int i = 0; i < 3; i++)
 	{
 		if (grid[i][0] == grid[i][1] && grid[i][0] == grid[i][2] && grid[i][0] != 0)	// row i
 		{
-			return grid[i][0];
+			if (grid[i][0] == 1)
+				return GameState::P1won;
+			else
+				return GameState::P2won;
 		}
 		else if (grid[0][i] == grid[1][i] && grid[0][i] == grid[2][i] && grid[0][i] != 0)	// column i
 		{
-			return grid[0][i];
+			if (grid[0][i] == 1)
+				return GameState::P1won;
+			else
+				return GameState::P2won;
 		}
 	}
 
 	//checking diagonals
 	if (grid[0][0] == grid[1][1] && grid[0][0] == grid[2][2] && grid[0][0] != 0)
 	{
-		return grid[0][0];
+		if (grid[0][0] == 1)
+			return GameState::P1won;
+		else
+			return GameState::P2won;
 	}
 	else if (grid[0][2] == grid[1][1] && grid[0][2] == grid[2][0] && grid[0][2] != 0)
 	{
-		return grid[0][2];
+		if (grid[0][2] == 1)
+			return GameState::P1won;
+		else
+			return GameState::P2won;
 	}
 
 	//checking draw condition
@@ -158,12 +178,12 @@ int TicTacToe::State() const
 		for (int x = 0; x < 3; x++)
 		{
 			if (grid[y][x] == 0)
-			{
 				draw = false;
-			}
 		}
 	}
 
-	//if drawn returm 0 else return -1 (game still going)
-	return draw ? 0 : -1;
+	if (draw)
+		return GameState::Draw;
+	else
+		return GameState::Running;
 }
