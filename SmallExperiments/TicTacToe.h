@@ -8,10 +8,13 @@ class TicTacToe
 public:
 	// initiallize grid to all 0s
 	TicTacToe();	
+
 	// returns whether move possible or not
+	// If possible move is done
 	bool Move(int player, int xloc, int yloc);	
+
 	void Display();
-	// 2 means p2 won, 1 means p1 won, 0 means draw, -1 means game running 
+
 	int State() const;	
 private:
 	int grid[3][3];
@@ -23,24 +26,24 @@ void RunTicTacToe()
 	TicTacToe game;
 	std::cout << "TikTacToe\n\n";
 	std::cout << "Type, when promted, the row and the column where you want to move\n";
-	std::cout << "Legal moves can only be made on spaces with Zeros\n\n";
+	std::cout << "Legal moves can only be made on spaces with squares\n\n\n";
 
 	while (game.State() == -1)	// Loop runs as long as game runs (-1)
 	{
 		game.Display();
-		std::cout << "Player 1's move\n";
+		std::cout << "Player 1's move (X)";
 		int col;
 		int row;
 		do
 		{
-			std::cout << "Column: ";
+			std::cout << "\nColumn: ";
 			std::cin >> col;
 
 			std::cout << "Row: ";
 			std::cin >> row;
 
 		} while (!game.Move(1, col - 1, row - 1));	// keep reasking for move if Invalid
-		std::cout << "\n";
+		std::cout << "\n\n";
 
 		if (game.State() != -1)		// Checking if p1's move finished the game
 		{
@@ -48,10 +51,10 @@ void RunTicTacToe()
 		}
 
 		game.Display();
-		std::cout << "Player 2's move\n";
+		std::cout << "Player 2's move (O)";
 		do
 		{
-			std::cout << "Column: ";
+			std::cout << "\nColumn: ";
 			std::cin >> col;
 
 			std::cout << "Row: ";
@@ -109,11 +112,15 @@ bool TicTacToe::Move(int player, int xloc, int yloc)
 
 void TicTacToe::Display()
 {
+	const unsigned char BLANK = 254;
 	for (int y = 0; y < 3; y++)
 	{
 		for (int x = 0; x < 3; x++)
 		{
-			std::cout << grid[y][x] << "\t";
+			char c = BLANK;
+			if (grid[y][x] == 1) c = 'X';
+			if (grid[y][x] == 2) c = 'O';
+			std::cout << c << "  ";
 		}
 		std::cout << "\n";
 	}
