@@ -1,5 +1,5 @@
-#include "LameKing.h"
+#include "TicTacToe.h"
 
 int main() {
-	SolutionLameKing("LameKing.txt");
+	RunTicTacToe();
 }
