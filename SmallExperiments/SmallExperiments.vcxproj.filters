@@ -32,6 +32,12 @@
     <ClInclude Include="LameKing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IteratableBST.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="TicTacToe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
