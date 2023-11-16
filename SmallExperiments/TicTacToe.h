@@ -32,7 +32,7 @@ private:
 void RunTicTacToe()
 {
 	TicTacToe game;
-	std::cout << "TikTacToe\n\n";
+	std::cout << "TicTacToe\n\n";
 	std::cout << "Type, when promted, the row and the column where you want to move\n";
 	std::cout << "Legal moves can only be made on spaces with squares\n\n\n";
 
@@ -123,6 +123,7 @@ void TicTacToe::Display()
 	const unsigned char BLANK = 254;
 	for (int y = 0; y < 3; y++)
 	{
+		std::cout << " ";
 		for (int x = 0; x < 3; x++)
 		{
 			char c = BLANK;
