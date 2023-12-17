@@ -50,7 +50,7 @@ void RunTicTacToe()
 			std::cout << "Row: ";
 			std::cin >> row;
 
-		} while (!game.Move(1, col - 1, row - 1));	// keep reasking for move if Invalid
+		} while (!game.Move(1, col - 1, row - 1));	// keep reasking for move if invalid
 		std::cout << "\n\n";
 
 		if (game.State() != TicTacToe::GameState::Running)		// Checking if p1's move finished the game
