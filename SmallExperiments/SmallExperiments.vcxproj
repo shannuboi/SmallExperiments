@@ -136,6 +136,7 @@
     <ClInclude Include="Graph.h" />
     <ClInclude Include="IteratableBST.h" />
     <ClInclude Include="LameKing.h" />
+    <ClInclude Include="NumberOfIslandsProblem.h" />
     <ClInclude Include="PyramidSum.h" />
     <ClInclude Include="TicTacToe.h" />
   </ItemGroup>
