@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AccessPoints.h" />
+    <ClInclude Include="AddTwoNumbers.h" />
     <ClInclude Include="FasterMultiplication.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="IteratableBST.h" />
