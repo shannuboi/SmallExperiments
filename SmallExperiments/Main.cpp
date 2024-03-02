@@ -1,7 +1,11 @@
 #include <iostream>
-#include "AccessPoints.h"
+#include "Maze.h"
 
 int main()
 {
-	SolutionAccessPoint("input.txt", "output.txt");
+	while (true)
+	{
+		RunMaze(12);
+		std::cin.get();
+	}
 }
