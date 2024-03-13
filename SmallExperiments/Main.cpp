@@ -1,18 +1,18 @@
 #include <iostream>
-#include <string>
-#include "BifidCipher.h"
+#include "ClockSyncAlgs.h"
 
 int main() {
-	const std::string Key = "BGWKZQPNDSIOAXEFCLUMTHYVR";
-	const std::string PlainText = "In cryptography the smallest mistakes can lead to the biggest secrets";
+    std::cout << "CRISTIAN'S ALGORITHM\n";
+    CristianAlg c;
+    c.SetClientOffset(-3232);
+    c.SetNetworkDelay(500);
+    c.RunCristianAlgorithm();
 
-	BifidCipher encryptor(Key);
-	std::cout << "Key: " << Key << "\n\n";
-	std::cout << "Plain text:     \t" << PlainText << "\n";
+    std::cout << "\n____________________________________________\n\n";
+    std::cout << "BERKELEY'S ALGORITHM\n";
 
-	std::string encrypted = encryptor.Cipher(PlainText);
-	std::cout << "Ciphered text:  \t" << encrypted << "\n";
-
-	std::string decrypted = encryptor.Decipher(encrypted);
-	std::cout << "Deciphered text:\t" << decrypted << "\n";
+    const int NUM_CLIENT = 6;
+    BerkeleyAlg b(NUM_CLIENT);
+    b.SetClientOffsets({ 10000, 15000, -2000, -30000, 4000, 7500 });
+    b.RunBerkeleyAlgorithm();
 }

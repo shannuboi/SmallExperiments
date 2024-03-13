@@ -137,6 +137,7 @@
     <ClInclude Include="AccessPoints.h" />
     <ClInclude Include="AddTwoNumbers.h" />
     <ClInclude Include="BifidCipher.h" />
+    <ClInclude Include="ClockSyncAlgs.h" />
     <ClInclude Include="DoublyLinkedList.h" />
     <ClInclude Include="FasterMultiplication.h" />
     <ClInclude Include="Graph.h" />
