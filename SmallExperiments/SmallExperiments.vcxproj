@@ -146,6 +146,7 @@
     <ClInclude Include="Maze.h" />
     <ClInclude Include="NumberOfIslandsProblem.h" />
     <ClInclude Include="PyramidSum.h" />
+    <ClInclude Include="StackAndUses.h" />
     <ClInclude Include="TicTacToe.h" />
   </ItemGroup>
   <ItemGroup>
