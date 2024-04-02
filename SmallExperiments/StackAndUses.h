@@ -2,6 +2,7 @@
 
 #include <string>
 #include <iostream>
+#include <algorithm>
 
 
 template <typename T>
@@ -132,33 +133,47 @@ bool BracesCheck(const std::string& expr) {
 bool IsCurOpPrecHigher(char cur, char top)
 {
 	if (cur == '(' || cur == '[' || cur == '{' ||
-		top == '(' || top == '[' || top == '{')
-	{
+		top == '(' || top == '[' || top == '{') {
 		return true;
 	}
-	else if (top == '^')
-	{
+	else if (top == '^') {
 		return false;
 	}
-	else if (top == '*' || top == '/')
-	{
+	else if (top == '*' || top == '/') {
 		return cur == '^';
 	}
-	else
-	{
+	else {
 		return cur == '^' || cur == '*' || cur == '/';
 	}
 }
 
-std::string Convert2Postfix(const std::string& infix) {
-	const char operators[11]
-		= { '+', '-', '*', '/', '^', '(', '[', '{', '}', ']', ')' };
-	std::string postfix = "";
+enum class OpType {
+	All = 0,
+	Brackets = 5,
+	ClosingBrackets = 8
+};
+
+bool IsOperand(char op, OpType optype = OpType::All) {
+	const char operators[11] = { '+', '-', '*', '/', '^', '(', '[', '{', '}', ']', ')' };
+
+	return std::find(std::begin(operators) + (int)optype, std::end(operators), op) != std::end(operators);
+}
+
+std::string Convert2Postfix(const std::string& input) {
+	std::string infix;
+	std::string postfix;
 	Stack_arr<char> stack;
 
+	// Remove spaces from input
+	std::copy_if(
+		input.begin(), input.end(), std::back_inserter(infix),
+		[](char c) {
+			return c != ' ' && c != '\t';
+		}
+	);
+
 	for (unsigned int i = 0; i < infix.length(); i++) {
-		while (std::find(std::begin(operators), std::end(operators), infix[i]) == std::end(operators)
-			&& i < infix.length()) {
+		while (!IsOperand(infix[i]) && i < infix.length()) {
 			//if cur char is not an operator
 			postfix += infix[i++];
 		}
@@ -167,13 +182,12 @@ std::string Convert2Postfix(const std::string& infix) {
 		if (i >= infix.length()) break;
 
 		//If cur char isn’t bracket add space
-		if (std::find(std::begin(operators) + 5, std::end(operators), infix[i])
-			== std::end(operators)) postfix += " ";
+		if (!IsOperand(infix[i], OpType::Brackets))
+			postfix += " ";
 
-		if (std::find(std::begin(operators) + 8, std::end(operators), infix[i]) == std::end(operators)) {
-			//if cur char is not }, ] or )
-			while (!stack.IsEmpty() && !IsCurOpPrecHigher(infix[i], stack.Peek()))
-			{
+		//if cur char is not }, ] or )
+		if (!IsOperand(infix[i], OpType::ClosingBrackets)) {
+			while (!stack.IsEmpty() && !IsCurOpPrecHigher(infix[i], stack.Peek())) {
 				postfix += stack.Pop();
 				postfix += " ";
 			}
