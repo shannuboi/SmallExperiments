@@ -1,7 +1,8 @@
 #include <iostream>
-#include <string>
-#include "StackAndUses.h"
+#include <iomanip>
+#include <cstring>
+#include "ElectionAlgs.h"
 
-int main() {
-	RunConvert2PostfixTest();
+int main()
+{
 }
