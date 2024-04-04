@@ -106,7 +106,7 @@ void findPath(int x, int y, int endX, int endY, int** arr, int size,
 
 	findPath(x + 1, y, endX, endY, arr, size, visited, allPaths, curPath + " right"); // check right
 
-	findPath(x, y + 1, endX, endY, arr, size, visited, allPaths, curPath + " down"); // check down
+	findPath(x, y + 1, endX, endY, arr, size, visited, allPaths, curPath + " down"); // check isDown
 
 	findPath(x - 1, y, endX, endY, arr, size, visited, allPaths, curPath + " left"); // check left
 }
