@@ -7,7 +7,6 @@
 #include <deque>
 
 int runmain() {
-
 	const unsigned char special_byte_1 = 0xe2;
 	const unsigned char special_byte_2 = 0x80;
 	const unsigned char special_byte_3v1 = 0x8c;
@@ -26,18 +25,16 @@ int runmain() {
 		std::string binary = std::format("{:0>8b}", buffer[2]);
 		std::string hex = std::format("{:x}", buffer[2]);
 
-		std::cout << "Char: " << c << "\t" << "bits: " << binary << '\t' << "hex: " << hex << '\n';
+		std::cout << "Char: " << c << '\t' << "bits: " << binary << '\t' << "hex: " << hex;
 
-		if (buffer[0] != special_byte_1) {
-			buffer.pop_front();
-			continue;
-		}
-		if (buffer[1] != special_byte_2) {
-			buffer.pop_front();
-			continue;
+		if ( buffer[0] == special_byte_1 && buffer[1] == special_byte_2 &&
+			(buffer[2] != special_byte_3v1 || buffer[2] != special_byte_3v2)) 
+		{
+			msgBinary += (buffer[2] & 1) ? '1' : '0';
+			std::cout << "\t(Extra)";
 		}
 		
-		msgBinary += (buffer[2] & 1) ? '1' : '0';
+		std::cout << '\n';
 		buffer.pop_front();
 	}
 
