@@ -68,6 +68,9 @@
     <ClInclude Include="ElectionAlgs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Staganalysis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
