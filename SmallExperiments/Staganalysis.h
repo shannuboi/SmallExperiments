@@ -44,6 +44,14 @@ int runmain() {
 	}
 
 	std::cout << "\n\nHidden message in binary:\n" << msgBinary << '\n';
+	
+	std::cout << "Converted to ASCII: ";
+	for (int i = 0; i < msgBinary.size(); i+=8) {
+		std::string byte = msgBinary.substr(i, 8);
+		int byte_int = std::stoi(byte, nullptr, 2);
+
+		std::cout << (char)byte_int;
+	}
 
 	return 0;
 }
