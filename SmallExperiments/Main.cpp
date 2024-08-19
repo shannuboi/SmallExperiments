@@ -1,5 +1,5 @@
-#include "Staganalysis.h"
+#include "ObserverPattern.h"
 
 int main() {
-	runmain();
+	Test();
 }

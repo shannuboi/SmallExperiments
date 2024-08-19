@@ -71,6 +71,9 @@
     <ClInclude Include="Staganalysis.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ObserverPattern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
