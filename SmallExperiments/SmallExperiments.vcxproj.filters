@@ -74,6 +74,9 @@
     <ClInclude Include="ObserverPattern.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CoinChange2.h">
+      <Filter>Header Files\leetcode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">

@@ -1,5 +1,10 @@
-#include "ObserverPattern.h"
+#include "CoinChange2.h"
+#include <iostream>
 
 int main() {
-	Test();
+	Solution s;
+	vector coins = { 
+		1,2,5
+	};
+	std::cout << s.change(500, coins);
 }
