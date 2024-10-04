@@ -141,6 +141,7 @@
     <ClInclude Include="CoinChange2.h" />
     <ClInclude Include="DoublyLinkedList.h" />
     <ClInclude Include="ElectionAlgs.h" />
+    <ClInclude Include="FairTeams.h" />
     <ClInclude Include="FasterMultiplication.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="IteratableBST.h" />
