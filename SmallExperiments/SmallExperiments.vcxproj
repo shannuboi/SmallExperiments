@@ -147,6 +147,7 @@
     <ClInclude Include="IteratableBST.h" />
     <ClInclude Include="LameKing.h" />
     <ClInclude Include="Maze.h" />
+    <ClInclude Include="MinimumPathSum.h" />
     <ClInclude Include="NumberOfIslandsProblem.h" />
     <ClInclude Include="ObserverPattern.h" />
     <ClInclude Include="PyramidSum.h" />
